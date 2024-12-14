@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Kamu</title>
+  <style>
+    /* Gaya CSS yang sedia ada */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    /* Gaya untuk soalan dan butang baru */
+    .question {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    .no-button {
+      background-color: tomato;
+    }
+    .yes-button {
+      background-color: green;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Kandungan lama website kau -->
+  <h1>Jawab soalan</h1>
+  <p>Jujur tau</p>
+
+  <!-- Soalan dan butang baru -->
+  <div class="container">
+    <p class="question">Are you gay?</p>
+    <button id="yes" class="yes-button">Yes</button>
+    <button id="no" class="no-button" onclick="moveNo()">No</button>
+  </div>
+
+  <!-- JavaScript untuk fungsi baru -->
+  <script>
+    // Event handler untuk butang "Yes"
+    document.getElementById('yes').addEventListener('click', function() {
+      document.querySelector('.question').textContent = "Memang pun";
+    });
+
+    // Fungsi untuk move butang "No"
+    function moveNo() {
+      let noButton = document.getElementById('no');
+      noButton.style.position = 'absolute';
+      noButton.style.left = Math.random() * 80 + 'vw';  // Position secara rawak
+      noButton.style.top = Math.random() * 80 + 'vh';   // Position secara rawak
+    }
+  </script>
+
+</body>
+</html>
